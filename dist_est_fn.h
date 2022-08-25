@@ -144,6 +144,6 @@ void cdfgam(int *which,double *p,double *q,double *x,double *shape,
 extern optrat_();
 extern ve11ad_();
 extern ve11td_();
-int lrout_endsite;
-int *lrout_count;
-double *lrout_likmat;
+inline int lrout_endsite;
+inline int *lrout_count;
+inline double *lrout_likmat;
