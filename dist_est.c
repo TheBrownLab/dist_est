@@ -8,15 +8,16 @@ int main(int argc, char **argv)
   double llikg,ub,*rates,*wt,*likmat,llik,alpha,kappa,*fr,*Qk;
   double one=1.0,*utreec,*utreecn,*M,*W,*Lam,bound,p,q,pl,*ratee,neg=-1.0;
 
-  /* control file */
-  fp=fopen(argv[--argc],"r");
-  dist_est_paramf(fp,&treefile,&Qfile,&ratefile,&seqfile,aaRmat,&nchar,
-		  &model,&nrates,&kappa,&ub,&de);
-  fclose(fp);
-  /* printf("nchar: %i\n",nchar); */
-  /* printf("model: %i\n",model); */
-  /* printf("nrate: %i\n",nrates); */
-  /* printf("ub: %f\n",ub); */
+  if (strcmp(argv[1], "-v") == 0) {
+    printf("v1.1\n");
+    exit(0);
+  } else {
+    /* control file */
+    fp=fopen(argv[--argc],"r");
+    dist_est_paramf(fp,&treefile,&Qfile,&ratefile,&seqfile,aaRmat,&nchar,
+        &model,&nrates,&kappa,&ub,&de);
+    fclose(fp);
+  }
 
   
   /* sequence */
